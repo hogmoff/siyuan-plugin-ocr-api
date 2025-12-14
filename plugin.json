@@ -1,0 +1,53 @@
+{
+  "name": "siyuan-plugin-ocr",
+  "author": "hogmoff",
+  "url": "https://github.com/hogmoff/siyuan-plugin-ocr",
+  "version": "1.0.0",
+  "minAppVersion": "3.4.2",
+  "backends": [
+    "windows",
+    "linux",
+    "darwin",
+    "ios",
+    "android",
+    "harmony",
+    "docker",
+    "all"
+  ],
+  "frontends": [
+    "desktop",
+    "mobile",
+    "browser-desktop",
+    "browser-mobile",
+    "desktop-window",
+    "all"
+  ],
+  "disabledInPublish": false,
+  "displayName": {
+    "default": "OCR Document Converter",
+    "zh_CN": "OCR 文档转换器",
+    "de_DE": "OCR Dokumentenkonverter"
+  },
+  "description": {
+    "default": "Convert documents to SiYuan notes using OCR APIs like Mistral",
+    "zh_CN": "使用 OCR API（如 Mistral）将文档转换为思源笔记",
+    "de_DE": "Konvertiert Dokumente mit OCR APIs wie Mistral in SiYuan Notizen"
+  },
+  "readme": {
+    "default": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "funding": {
+    "openCollective": "",
+    "patreon": "",
+    "github": "",
+    "custom": []
+  },
+  "keywords": [
+    "ocr",
+    "document",
+    "mistral",
+    "文档识别",
+    "Dokumentenerkennung"
+  ]
+}

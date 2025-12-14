@@ -1,0 +1,274 @@
+// OCR Plugin Styles
+
+.ocr-dock-container {
+  overflow-y: auto;
+  background-color: var(--b3-theme-background);
+}
+
+.ocr-dock {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: 12px;
+    color: var(--b3-theme-on-surface);
+    font-weight: 500;
+  }
+
+  &__select,
+  &__input {
+    width: 100%;
+  }
+
+  &__message {
+    padding: 12px;
+    background-color: var(--b3-card-warning-background);
+    color: var(--b3-card-warning-color);
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &__upload {
+    border: 2px dashed var(--b3-border-color);
+    border-radius: 8px;
+    padding: 24px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--b3-theme-surface);
+
+    &:hover {
+      border-color: var(--b3-theme-primary);
+      background-color: var(--b3-theme-primary-lightest);
+    }
+
+    &--dragover {
+      border-color: var(--b3-theme-primary);
+      background-color: var(--b3-theme-primary-lightest);
+    }
+  }
+
+  &__upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__upload-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--b3-theme-on-surface-light);
+  }
+
+  &__upload-hint {
+    font-size: 13px;
+    color: var(--b3-theme-on-surface);
+  }
+
+  &__upload-formats {
+    font-size: 11px;
+    color: var(--b3-theme-on-surface-light);
+  }
+
+  &__file-input {
+    display: none;
+  }
+
+  &__file-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--b3-theme-background);
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  &__file-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--b3-theme-primary);
+    flex-shrink: 0;
+  }
+
+  &__file-name {
+    flex: 1;
+    font-size: 13px;
+    color: var(--b3-theme-on-surface);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  &__file-remove {
+    flex-shrink: 0;
+    padding: 4px !important;
+    min-width: auto !important;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__progress {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__progress-bar {
+    height: 6px;
+    background-color: var(--b3-theme-surface);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__progress-fill {
+    height: 100%;
+    background-color: var(--b3-theme-primary);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+
+  &__progress-text {
+    font-size: 12px;
+    color: var(--b3-theme-on-surface-light);
+    text-align: center;
+  }
+
+  &__error {
+    padding: 12px;
+    background-color: var(--b3-card-error-background);
+    color: var(--b3-card-error-color);
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  &__success {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: var(--b3-card-success-background);
+    color: var(--b3-card-success-color);
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  &__actions {
+    margin-top: 8px;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+// Settings Panel Styles
+.ocr-settings {
+  width: 100%;
+  min-width: 400px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--b3-theme-on-background);
+    margin: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--b3-theme-on-surface-light);
+    font-size: 13px;
+    background-color: var(--b3-theme-surface);
+    border-radius: 8px;
+  }
+
+  &__item {
+    padding: 16px;
+    background-color: var(--b3-theme-surface);
+    border-radius: 8px;
+    border: 1px solid var(--b3-border-color);
+  }
+
+  &__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__item-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--b3-theme-on-surface);
+  }
+
+  &__item-type {
+    font-size: 11px;
+    padding: 2px 8px;
+    background-color: var(--b3-theme-primary-lightest);
+    color: var(--b3-theme-primary);
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  &__item-url {
+    font-size: 12px;
+    color: var(--b3-theme-on-surface-light);
+    margin-bottom: 12px;
+    word-break: break-all;
+  }
+
+  &__item-actions {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+// Dialog Form Styles
+.ocr-dialog {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: 12px;
+    color: var(--b3-theme-on-surface);
+    font-weight: 500;
+  }
+}
