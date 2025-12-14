@@ -65,7 +65,9 @@ export class SiYuanApi {
 
     async uploadBase64Asset(base64Data: string, filename: string): Promise<string> {
         // Convert base64 to blob
-        const byteCharacters = atob(base64Data);
+        // Clean base64 string (remove data URI prefix if present and all whitespace)
+        const cleanBase64 = base64Data.replace(/^data:image\/[a-zA-Z]+;base64,/, "").replace(/\s/g, "");
+        const byteCharacters = atob(cleanBase64);
         const byteNumbers = new Array(byteCharacters.length);
         for (let i = 0; i < byteCharacters.length; i++) {
             byteNumbers[i] = byteCharacters.charCodeAt(i);
