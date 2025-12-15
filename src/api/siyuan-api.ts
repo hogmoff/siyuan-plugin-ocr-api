@@ -91,10 +91,11 @@ export class SiYuanApi {
                     const assetPath = uploadedImages.get(image.id);
                     if (assetPath) {
                         // Replace image reference in markdown
-                        markdown = markdown.replace(
-                            new RegExp(`!\\[([^\\]]*)\\]\\(${image.id}\\)`, "g"),
-                            `![$1](${assetPath})`
-                        );
+                        // Match "](id)" pattern to handle both images ![...](id) and links [...](id)
+                        // This also handles nested brackets in alt text correctly by focusing on the link part
+                        const escapedId = this.escapeRegExp(image.id);
+                        const regex = new RegExp(`(\\]\\s*\\()${escapedId}(\\s*\\))`, "g");
+                        markdown = markdown.replace(regex, `$1${assetPath}$2`);
                     }
                 }
             }
@@ -103,6 +104,31 @@ export class SiYuanApi {
         }
 
         return sections.join("\n\n---\n\n");
+    }
+
+    private escapeRegExp(string: string): string {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    private getRelativePath(docPath: string, assetPath: string): string {
+        // Remove leading slash if present
+        const cleanDocPath = docPath.replace(/^\//, "");
+        
+        // Split path into segments
+        const parts = cleanDocPath.split("/").filter(p => p.length > 0);
+        
+        // Remove filename, keep directories
+        // e.g. "Folder/Doc" -> "Folder" (depth 1)
+        // "Doc" -> "" (depth 0)
+        parts.pop();
+        
+        const depth = parts.length;
+        if (depth === 0) {
+            return assetPath;
+        }
+        
+        const prefix = "../".repeat(depth);
+        return prefix + assetPath;
     }
 
     async processAndCreateDocument(
@@ -135,7 +161,12 @@ export class SiYuanApi {
                                     image.base64,
                                     `ocr_${Date.now()}_${image.id}.png`
                                 );
-                                uploadedImages.set(image.id, assetPath);
+                                
+                                console.log(`Uploaded asset: ${assetPath} for doc: ${docPath}`);
+                                const adjustedPath = this.getRelativePath(docPath, assetPath);
+                                console.log(`Adjusted path: ${adjustedPath}`);
+                                
+                                uploadedImages.set(image.id, adjustedPath);
                                 imageCount++;
                                 const progress = 30 + Math.round((imageCount / totalImages) * 50);
                                 onProgress?.(progress, `Uploading images (${imageCount}/${totalImages})...`);

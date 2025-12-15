@@ -36,6 +36,11 @@ export class DockPanel {
         this.selectedNotebookId = lastNotebookId || "";
         this.targetPath = lastPath || "/";
 
+        // Validate selection
+        if (!this.apis.find(a => a.id === this.selectedApiId)) {
+            this.selectedApiId = this.apis.length > 0 ? this.apis[0].id : "";
+        }
+
         try {
             this.notebooks = await this.siyuanApi.listNotebooks();
             if (!this.selectedNotebookId && this.notebooks.length > 0) {

@@ -142,13 +142,15 @@ export default class OcrPlugin extends Plugin {
             this.storage = storedData;
         }
 
+        const stateData = await this.loadData("ocr-state");
+
         // Update dock panel with loaded data
         if (this.dockPanel) {
             this.dockPanel.init(
                 this.storage.apis,
-                this.storage.lastSelectedApiId,
-                this.storage.lastNotebookId,
-                this.storage.lastPath
+                stateData?.lastSelectedApiId ?? this.storage.lastSelectedApiId,
+                stateData?.lastNotebookId ?? this.storage.lastNotebookId,
+                stateData?.lastPath ?? this.storage.lastPath
             );
         }
 
