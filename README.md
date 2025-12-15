@@ -51,6 +51,16 @@ A SiYuan plugin that converts documents (PDF, images) to SiYuan notes using OCR 
 6. Click "Start Conversion"
 7. Once complete, click "Open Document" to view the result
 
+## Document Attributes
+
+The plugin automatically adds the following attributes to the created document:
+
+- `custom-ocr-source-file`: Original filename of the scanned file
+- `custom-ocr-date`: Date of conversion
+- `custom-ocr-pages`: Number of pages
+- `custom-ocr-images`: Number of images
+- `custom-ocr-model`: Model used for conversion
+
 ## API Providers
 
 ### Mistral OCR

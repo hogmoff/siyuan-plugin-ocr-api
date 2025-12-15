@@ -51,6 +51,16 @@ Ein SiYuan-Plugin, das Dokumente (PDF, Bilder) mittels OCR-APIs in SiYuan-Notize
 6. Klicken Sie auf "Konvertierung starten"
 7. Nach Abschluss klicken Sie auf "Dokument öffnen" um das Ergebnis anzuzeigen
 
+## Dokument-Attribute
+
+Das Plugin fügt dem erstellten Dokument automatisch folgende Attribute hinzu:
+
+- `custom-ocr-source-file`: Originalnamen der gescannten Datei
+- `custom-ocr-date`: Datum der Konvertierung
+- `custom-ocr-pages`: Anzahl der Seiten
+- `custom-ocr-images`: Anzahl der Bilder
+- `custom-ocr-model`: Modell der Konvertierung
+
 ## API-Anbieter
 
 ### Mistral OCR

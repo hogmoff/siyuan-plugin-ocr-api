@@ -67,6 +67,7 @@ export interface MistralUsage {
 export interface OcrResult {
     pages: OcrPage[];
     totalPages: number;
+    model?: string;
 }
 
 export interface OcrPage {
@@ -95,9 +96,7 @@ export interface SiYuanResponse<T> {
     data: T;
 }
 
-export interface CreateDocResponse {
-    id: string;
-}
+export type CreateDocResponse = string;
 
 export interface ListNotebooksResponse {
     notebooks: Notebook[];

@@ -51,6 +51,16 @@
 6. 点击"开始转换"
 7. 完成后，点击"打开文档"查看结果
 
+## 文档属性
+
+插件会自动向创建的文档添加以下属性：
+
+- `custom-ocr-source-file`：原始扫描文件名
+- `custom-ocr-date`：转换日期
+- `custom-ocr-pages`：页数
+- `custom-ocr-images`：图片数量
+- `custom-ocr-model`：转换使用的模型
+
 ## API 提供商
 
 ### Mistral OCR

@@ -32,7 +32,22 @@ export class SiYuanApi {
                 markdown: markdown
             }, (response: SiYuanResponse<CreateDocResponse>) => {
                 if (response.code === 0) {
-                    resolve(response.data.id);
+                    resolve(response.data);
+                } else {
+                    reject(new Error(response.msg));
+                }
+            });
+        });
+    }
+
+    async setBlockAttrs(id: string, attrs: Record<string, string>): Promise<void> {
+        return new Promise((resolve, reject) => {
+            fetchPost("/api/attr/setBlockAttrs", {
+                id: id,
+                attrs: attrs
+            }, (response: SiYuanResponse<void>) => {
+                if (response.code === 0) {
+                    resolve();
                 } else {
                     reject(new Error(response.msg));
                 }
@@ -118,6 +133,7 @@ export class SiYuanApi {
         result: OcrResult,
         notebookId: string,
         docPath: string,
+        originalFileName: string,
         onProgress?: (progress: number, message: string) => void
     ): Promise<string> {
         const uploadedImages = new Map<string, string>();
@@ -169,6 +185,36 @@ export class SiYuanApi {
 
         // Create document
         const docId = await this.createDocWithMarkdown(notebookId, docPath, markdown);
+
+        // Set attributes
+        onProgress?.(95, "Setting attributes...");
+        
+        // Count total images
+        let totalImagesCount = 0;
+        result.pages.forEach(p => {
+             if (p.images) totalImagesCount += p.images.length;
+        });
+
+        const formatDate = (date: Date) => {
+            const pad = (n: number) => (n < 10 ? "0" + n : n.toString());
+            return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+        };
+
+        const attrs = {
+            "custom-ocr-source-file": originalFileName,
+            "custom-ocr-date": formatDate(new Date()),
+            "custom-ocr-pages": result.totalPages.toString(),
+            "custom-ocr-images": totalImagesCount.toString(),
+            "custom-ocr-model": result.model || "unknown"
+        };
+
+        try {
+            console.log("Setting attributes:", attrs, docId);
+            await this.setBlockAttrs(docId, attrs);
+        } catch (error) {
+            console.error("Failed to set attributes:", error);
+            // Don't fail the whole process if setting attributes fails
+        }
 
         onProgress?.(100, "Done!");
 

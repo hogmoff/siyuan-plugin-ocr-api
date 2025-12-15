@@ -332,6 +332,7 @@ export class DockPanel {
                 result,
                 this.selectedNotebookId,
                 docPath,
+                this.uploadedFile.name,
                 (progress, message) => this.updateProgress(progress, message)
             );
 

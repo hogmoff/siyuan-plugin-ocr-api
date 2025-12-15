@@ -64,7 +64,8 @@ export class OcrService {
 
         return {
             pages,
-            totalPages: response.pages.length
+            totalPages: response.pages.length,
+            model: response.model
         };
     }
 
