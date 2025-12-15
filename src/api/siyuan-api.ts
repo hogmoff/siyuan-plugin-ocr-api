@@ -110,25 +110,8 @@ export class SiYuanApi {
         return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
-    private getRelativePath(docPath: string, assetPath: string): string {
-        // Remove leading slash if present
-        const cleanDocPath = docPath.replace(/^\//, "");
-        
-        // Split path into segments
-        const parts = cleanDocPath.split("/").filter(p => p.length > 0);
-        
-        // Remove filename, keep directories
-        // e.g. "Folder/Doc" -> "Folder" (depth 1)
-        // "Doc" -> "" (depth 0)
-        parts.pop();
-        
-        const depth = parts.length;
-        if (depth === 0) {
-            return assetPath;
-        }
-        
-        const prefix = "../".repeat(depth);
-        return prefix + assetPath;
+    private getRelativePath(_docPath: string, assetPath: string): string {
+        return assetPath;
     }
 
     async processAndCreateDocument(

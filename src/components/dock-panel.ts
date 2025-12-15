@@ -342,6 +342,7 @@ export class DockPanel {
                 statusMessage: this.i18n.success,
                 resultDocId: docId
             };
+            this.uploadedFile = null;
             showMessage(this.i18n.success, 3000, "info");
 
         } catch (error) {
