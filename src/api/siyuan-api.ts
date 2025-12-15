@@ -159,7 +159,7 @@ export class SiYuanApi {
                             try {
                                 const assetPath = await this.uploadBase64Asset(
                                     image.base64,
-                                    `ocr_${Date.now()}_${image.id}.png`
+                                    this.generateAssetName()
                                 );
                                 
                                 console.log(`Uploaded asset: ${assetPath} for doc: ${docPath}`);
@@ -190,5 +190,20 @@ export class SiYuanApi {
         onProgress?.(100, "Done!");
 
         return docId;
+    }
+    private generateAssetName(): string {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = ("0" + (date.getMonth() + 1)).slice(-2);
+        const day = ("0" + date.getDate()).slice(-2);
+        const hours = ("0" + date.getHours()).slice(-2);
+        const minutes = ("0" + date.getMinutes()).slice(-2);
+        const seconds = ("0" + date.getSeconds()).slice(-2);
+        const timestamp = `${year}${month}${day}${hours}${minutes}${seconds}`;
+        
+        // Generate 7 char random string like Siyuan
+        const random = Math.random().toString(36).substring(2, 9);
+        
+        return `ocr_${timestamp}-${random}.png`;
     }
 }
