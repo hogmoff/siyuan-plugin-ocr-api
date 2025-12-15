@@ -63,6 +63,11 @@ Ein SiYuan-Plugin, das Dokumente (PDF, Bilder) mittels OCR-APIs in SiYuan-Notize
 
 Weitere Informationen finden Sie in der [Mistral OCR Dokumentation](https://docs.mistral.ai/capabilities/document_ai/basic_ocr).
 
+## Datenschutz und Dateispeicherung
+
+- **Originaldateien**: Die hochgeladenen Originaldateien werden nicht in SiYuan gespeichert. Sie werden nur für die Dauer der Konvertierung an die API gesendet.
+- **Extrahierte Bilder**: Bilder, die aus den Dokumenten extrahiert wurden, werden im `assets`-Ordner von SiYuan gespeichert, um im konvertierten Dokument angezeigt werden zu können.
+
 ## Entwicklung
 
 ```bash

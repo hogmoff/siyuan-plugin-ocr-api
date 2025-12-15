@@ -2,7 +2,7 @@
   "name": "siyuan-plugin-ocr",
   "author": "hogmoff",
   "url": "https://github.com/hogmoff/siyuan-plugin-ocr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minAppVersion": "3.4.2",
   "backends": [
     "windows",

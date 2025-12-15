@@ -1,6 +1,6 @@
 {
   "name": "siyuan-plugin-ocr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OCR Plugin for SiYuan - Convert documents to notes using OCR APIs",
   "main": ".src/index.js",
   "scripts": {

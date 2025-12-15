@@ -63,6 +63,11 @@
 
 更多信息，请参阅 [Mistral OCR 文档](https://docs.mistral.ai/capabilities/document_ai/basic_ocr)。
 
+## 数据隐私和文件存储
+
+- **原始文件**：上传的源文件不会存储在 SiYuan 中。它们仅在转换期间发送到 API。
+- **提取的图像**：从文档中提取的图像将保存到 SiYuan 的 `assets` 文件夹中，以便在转换后的文档中显示。
+
 ## 开发
 
 ```bash

@@ -63,6 +63,11 @@ A SiYuan plugin that converts documents (PDF, images) to SiYuan notes using OCR 
 
 For more information, see the [Mistral OCR Documentation](https://docs.mistral.ai/capabilities/document_ai/basic_ocr).
 
+## Data Privacy and File Storage
+
+- **Original Files**: Uploaded source files are not stored in SiYuan. They are only sent to the API for the duration of the conversion.
+- **Extracted Images**: Images extracted from documents are saved in SiYuan's `assets` folder to be displayed in the converted document.
+
 ## Development
 
 ```bash
