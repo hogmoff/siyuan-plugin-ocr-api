@@ -67,6 +67,7 @@ Weitere Informationen finden Sie in der [Mistral OCR Dokumentation](https://docs
 
 - **Originaldateien**: Die hochgeladenen Originaldateien werden nicht in SiYuan gespeichert. Sie werden nur für die Dauer der Konvertierung an die API gesendet.
 - **Extrahierte Bilder**: Bilder, die aus den Dokumenten extrahiert wurden, werden im `assets`-Ordner von SiYuan gespeichert, um im konvertierten Dokument angezeigt werden zu können.
+- **API-Datenschutz**: Bitte beachten Sie die Datenschutzrichtlinien der jeweiligen API-Betreiber. Diese liegen nicht in der Verantwortung des Autors des Plugins.
 
 ## Entwicklung
 
@@ -80,6 +81,10 @@ pnpm run dev
 # Produktions-Build
 pnpm run build
 ```
+
+## Mitwirken
+
+Mitarbeit am Plugin ist willkommen! Bitte beachten Sie jedoch, dass Beiträge (Issues, Pull Requests, Diskussionen) ausschließlich in **Englischer Sprache** verfasst werden müssen, um die internationale Zusammenarbeit zu erleichtern.
 
 ## Lizenz
 

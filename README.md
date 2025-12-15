@@ -67,6 +67,7 @@ For more information, see the [Mistral OCR Documentation](https://docs.mistral.a
 
 - **Original Files**: Uploaded source files are not stored in SiYuan. They are only sent to the API for the duration of the conversion.
 - **Extracted Images**: Images extracted from documents are saved in SiYuan's `assets` folder to be displayed in the converted document.
+- **API Privacy**: Please observe the privacy policies of the respective API providers. These are not the responsibility of the plugin author.
 
 ## Development
 
@@ -80,6 +81,10 @@ pnpm run dev
 # Production build
 pnpm run build
 ```
+
+## Contributing
+
+Contributions to the plugin are welcome! However, please note that contributions (issues, pull requests, discussions) must be written exclusively in **English** to facilitate international collaboration.
 
 ## License
 
