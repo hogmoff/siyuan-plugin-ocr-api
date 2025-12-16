@@ -25,7 +25,7 @@ A SiYuan plugin that converts documents (PDF, images) to SiYuan notes using OCR 
 ## Installation
 
 1. Download the latest release from the releases page
-2. Extract `package.zip` to `{workspace}/data/plugins/siyuan-plugin-ocr`
+2. Extract `package.zip` to `{workspace}/data/plugins/siyuan-plugin-ocr-api`
 3. Restart SiYuan or reload plugins
 4. Enable the plugin in SiYuan settings
 

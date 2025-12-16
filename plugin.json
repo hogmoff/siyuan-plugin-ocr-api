@@ -1,7 +1,7 @@
 {
-  "name": "siyuan-plugin-ocr",
+  "name": "siyuan-plugin-ocr-api",
   "author": "hogmoff",
-  "url": "https://github.com/hogmoff/siyuan-plugin-ocr",
+  "url": "https://github.com/hogmoff/siyuan-plugin-ocr-api",
   "version": "0.1.0",
   "minAppVersion": "3.4.2",
   "backends": [

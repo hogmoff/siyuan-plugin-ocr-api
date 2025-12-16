@@ -25,7 +25,7 @@
 ## 安装
 
 1. 从发布页面下载最新版本
-2. 将 `package.zip` 解压到 `{workspace}/data/plugins/siyuan-plugin-ocr`
+2. 将 `package.zip` 解压到 `{workspace}/data/plugins/siyuan-plugin-ocr-api`
 3. 重启思源或重新加载插件
 4. 在思源设置中启用插件
 

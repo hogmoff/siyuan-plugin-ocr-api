@@ -25,7 +25,7 @@ Ein SiYuan-Plugin, das Dokumente (PDF, Bilder) mittels OCR-APIs in SiYuan-Notize
 ## Installation
 
 1. Laden Sie die neueste Version von der Release-Seite herunter
-2. Entpacken Sie `package.zip` nach `{workspace}/data/plugins/siyuan-plugin-ocr`
+2. Entpacken Sie `package.zip` nach `{workspace}/data/plugins/siyuan-plugin-ocr-api`
 3. Starten Sie SiYuan neu oder laden Sie die Plugins neu
 4. Aktivieren Sie das Plugin in den SiYuan-Einstellungen
 
