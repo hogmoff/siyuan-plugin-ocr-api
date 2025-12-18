@@ -1,4 +1,4 @@
-[English](README.md) | [中文](README_zh_CN.md)
+[English](https://github.com/hogmoff/siyuan-plugin-ocr-api/blob/main/README.md) | [中文](https://github.com/hogmoff/siyuan-plugin-ocr-api/blob/main/README_zh_CN.md)
 
 # SiYuan OCR Dokumentenkonverter
 

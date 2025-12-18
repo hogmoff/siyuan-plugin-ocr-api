@@ -2,27 +2,15 @@
   "name": "siyuan-plugin-ocr-api",
   "author": "hogmoff",
   "url": "https://github.com/hogmoff/siyuan-plugin-ocr-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minAppVersion": "3.4.2",
   "backends": [
-    "windows",
-    "linux",
-    "darwin",
-    "ios",
-    "android",
-    "harmony",
-    "docker",
     "all"
   ],
   "frontends": [
-    "desktop",
-    "mobile",
-    "browser-desktop",
-    "browser-mobile",
-    "desktop-window",
     "all"
   ],
-  "disabledInPublish": false,
+  "disabledInPublish": true,
   "displayName": {
     "default": "OCR Document Converter",
     "zh_CN": "OCR 文档转换器",

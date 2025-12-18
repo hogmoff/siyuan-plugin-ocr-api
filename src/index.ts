@@ -165,6 +165,7 @@ export default class OcrPlugin extends Plugin {
     }
 
     uninstall() {
+        this.removeData(STORAGE_NAME);
         console.log("OCR Plugin uninstalled");
     }
 }
