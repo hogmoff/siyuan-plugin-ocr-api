@@ -49,6 +49,7 @@ export class SettingsPanel {
                     <span class="ocr-settings__item-type">${api.apiType}</span>
                 </div>
                 <div class="ocr-settings__item-url">${api.apiUrl}</div>
+                ${api.model ? `<div class="ocr-settings__item-url" style="color: var(--b3-theme-on-surface-light);">Model: ${api.model}</div>` : ""}
                 <div class="ocr-settings__item-actions">
                     <button class="b3-button b3-button--small ocr-edit-api" data-id="${api.id}">
                         <svg class="b3-button__icon"><use xlink:href="#iconEdit"></use></svg>
@@ -99,7 +100,8 @@ export class SettingsPanel {
             displayName: "",
             apiType: "mistral",
             apiUrl: "https://api.mistral.ai/v1/ocr",
-            apiKey: ""
+            apiKey: "",
+            model: "mistral-ocr-latest"
         };
 
         const dialog = new Dialog({
@@ -119,6 +121,11 @@ export class SettingsPanel {
                                     ${this.i18n.mistralOcr}
                                 </option>
                             </select>
+                        </div>
+                        <div class="ocr-dialog__field">
+                            <label class="ocr-dialog__label">${this.i18n.model}</label>
+                            <input type="text" class="b3-text-field" id="ocr-api-model"
+                                placeholder="${this.i18n.modelPlaceholder}" value="${api.model || "mistral-ocr-latest"}">
                         </div>
                         <div class="ocr-dialog__field">
                             <label class="ocr-dialog__label">${this.i18n.apiUrl}</label>
@@ -159,13 +166,15 @@ export class SettingsPanel {
         dialog.element.querySelector("#ocr-dialog-save")?.addEventListener("click", () => {
             const nameInput = dialog.element.querySelector("#ocr-api-name") as HTMLInputElement;
             const keyInput = dialog.element.querySelector("#ocr-api-key") as HTMLInputElement;
+            const modelInput = dialog.element.querySelector("#ocr-api-model") as HTMLInputElement;
 
             const updatedApi: ApiConfig = {
                 id: api.id,
                 displayName: nameInput.value.trim() || this.i18n.defaultApiName,
                 apiType: typeSelect.value as ApiType,
                 apiUrl: urlInput.value.trim(),
-                apiKey: keyInput.value
+                apiKey: keyInput.value,
+                model: modelInput.value.trim()
             };
 
             if (isEdit) {

@@ -13,6 +13,8 @@
   "apiUrlPlaceholder": "e.g. https://api.mistral.ai/v1/ocr",
   "apiKey": "API Key",
   "apiKeyPlaceholder": "Enter your API key",
+  "model": "Model",
+  "modelPlaceholder": "e.g. mistral-ocr-latest",
   "apiType": "API Type",
   "save": "Save",
   "cancel": "Cancel",

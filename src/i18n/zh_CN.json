@@ -13,6 +13,8 @@
   "apiUrlPlaceholder": "例如：https://api.mistral.ai/v1/ocr",
   "apiKey": "API 密钥",
   "apiKeyPlaceholder": "输入您的 API 密钥",
+  "model": "模型",
+  "modelPlaceholder": "例如：mistral-ocr-latest",
   "apiType": "API 类型",
   "save": "保存",
   "cancel": "取消",

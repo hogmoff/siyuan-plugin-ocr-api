@@ -5,6 +5,7 @@ export interface ApiConfig {
     apiType: ApiType;
     apiUrl: string;
     apiKey: string;
+    model?: string;
 }
 
 export type ApiType = "mistral" | "custom";

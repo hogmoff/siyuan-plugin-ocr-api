@@ -26,7 +26,7 @@ export class OcrService {
         const mimeType = this.getMimeType(file.name);
 
         const requestBody = {
-            model: "mistral-ocr-latest",
+            model: this.config.model || "mistral-ocr-latest",
             document: {
                 type: "document_url",
                 document_url: `data:${mimeType};base64,${base64Data}`
