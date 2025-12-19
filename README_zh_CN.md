@@ -38,6 +38,7 @@
 3. 输入：
    - **显示名称**：此 API 配置的友好名称
    - **API 类型**：选择 OCR 提供商（目前为 Mistral）
+   - **模型**：要使用的 OCR 模型（默认：`mistral-ocr-latest`）
    - **API 地址**：API 端点（默认：`https://api.mistral.ai/v1/ocr`）
    - **API 密钥**：您从提供商获取的 API 密钥
 

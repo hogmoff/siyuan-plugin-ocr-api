@@ -38,6 +38,7 @@ A SiYuan plugin that converts documents (PDF, images) to SiYuan notes using OCR 
 3. Enter:
    - **Display Name**: A friendly name for this API configuration
    - **API Type**: Select the OCR provider (currently Mistral)
+   - **Model**: The OCR model to use (default: `mistral-ocr-latest`)
    - **API URL**: The API endpoint (default: `https://api.mistral.ai/v1/ocr`)
    - **API Key**: Your API key from the provider
 

@@ -38,6 +38,7 @@ Ein SiYuan-Plugin, das Dokumente (PDF, Bilder) mittels OCR-APIs in SiYuan-Notize
 3. Geben Sie ein:
    - **Anzeigename**: Ein freundlicher Name für diese API-Konfiguration
    - **API-Typ**: Wählen Sie den OCR-Anbieter (derzeit Mistral)
+   - **Modell**: Das zu verwendende OCR-Modell (Standard: `mistral-ocr-latest`)
    - **API-URL**: Der API-Endpunkt (Standard: `https://api.mistral.ai/v1/ocr`)
    - **API-Schlüssel**: Ihr API-Schlüssel vom Anbieter
 
